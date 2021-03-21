@@ -122,6 +122,10 @@ def align_text_fn(
             print("==>", aligned_text)
             print("="*30)
 
+        # print("ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")
+        # print(len(text_to_sequence(found_text)) , ' +++++++ ' ,len(text_to_sequence(recognition_text)))
+        # print("ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")
+
         if aligned_text is not None:
             result = { audio_path: add_punctuation(aligned_text) }
         elif abs(len(text_to_sequence(found_text)) - len(text_to_sequence(recognition_text))) > 10:

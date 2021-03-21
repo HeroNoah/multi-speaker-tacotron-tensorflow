@@ -48,7 +48,7 @@ basic_params.update({
 
     # Attention
     'attention_type': 'bah_mon', # ntm2-5
-    'attention_size': f(256),
+    'attention_size': f(128),
     'attention_state_size': f(256),
 
     # Decoder recurrent network
@@ -65,7 +65,7 @@ basic_params.update({
     'post_proj_sizes': [f(256), 80], # num_mels=80
     'post_proj_width': 3,
 
-    'reduction_factor': 4,
+    'reduction_factor': 5,
 })
 
 if False: # Deep Voice 2 AudioBook Dataset

@@ -10,8 +10,11 @@ from utils import add_postfix
 from text.korean import normalize
 
 matplotlib.use('Agg')
-font_location = './utils/D2Coding.ttf'
-font_name = fm.FontProperties(fname = font_location).get_name()
+font_path = 'C:/Users/heron/AppData/Local/Microsoft/Windows/Fonts/NanumGothicCoding.ttf'
+# font_location = './utils/D2Coding.ttf'
+font_name = fm.FontProperties(fname = font_path, size=10).get_name()             
+
+
 matplotlib.rc('font', family = font_name)
 
 def plot(alignment, info, text, isKorean=True):
@@ -24,8 +27,8 @@ def plot(alignment, info, text, isKorean=True):
             origin='lower',
             interpolation='none')
 
-    xlabel = 'Encoder timestep'
-    ylabel = 'Decoder timestep'
+    xlabel = 'Encoder timestep 가로!!'
+    ylabel = 'Decoder timestep 세로!!'
 
     if info is not None:
         xlabel += '\n{}'.format(info)
@@ -54,16 +57,15 @@ def plot(alignment, info, text, isKorean=True):
     plt.tight_layout()
 
 def plot_alignment(
-
         alignment, path, info=None, text=None, isKorean=True):
 
     if text:
         tmp_alignment = alignment[:len(h2j(text)) + 2]
 
         plot(tmp_alignment, info, text, isKorean)
-        plt.savefig(path, format='png')
+        plt.savefig(path+'_'+text+'.png', format='png')
     else:
         plot(alignment, info, text, isKorean)
-        plt.savefig(path, format='png')
+        plt.savefig(path+'_'+text+'.png', format='png')
 
     print(" [*] Plot saved: {}".format(path))
